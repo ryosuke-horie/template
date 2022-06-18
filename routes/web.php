@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('top');
 });
+
+
+use App\Http\Controllers\ContactController;
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::post('/contact', [ContactController::class,'store'])->name('contact.store');
